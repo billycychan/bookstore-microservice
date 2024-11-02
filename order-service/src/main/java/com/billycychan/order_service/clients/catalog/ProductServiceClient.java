@@ -1,5 +1,6 @@
 package com.billycychan.order_service.clients.catalog;
 
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
@@ -15,9 +16,9 @@ public class ProductServiceClient {
         this.restClient = restClient;
     }
 
+    @Retry(name = "catalog-service", fallbackMethod = "getProductByCodeFallback")
     public Optional<Product> getProductByCode(String code) {
         log.info("Fetching product for code: {}", code);
-        try {
             var product =
                     restClient
                             .get()
@@ -25,9 +26,11 @@ public class ProductServiceClient {
                             .retrieve()
                             .body(Product.class);
             return Optional.ofNullable(product);
-        } catch (Exception e) {
-            log.error("Failed to fetch product for code: {}", code, e);
-            return Optional.empty();
-        }
     }
+
+    Optional<Product> getProductByCodeFallback(String code, Throwable t) {
+        log.info("catalog-service get product by code fallback: code:{}, Error: {} ", code, t.getMessage());
+        return Optional.empty();
+    }
+
 }
