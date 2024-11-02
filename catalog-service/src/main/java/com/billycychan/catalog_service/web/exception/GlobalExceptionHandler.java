@@ -1,9 +1,8 @@
 package com.billycychan.catalog_service.web.exception;
 
+import com.billycychan.catalog_service.domain.ProductNotFoundException;
 import java.net.URI;
 import java.time.Instant;
-
-import com.billycychan.catalog_service.domain.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;

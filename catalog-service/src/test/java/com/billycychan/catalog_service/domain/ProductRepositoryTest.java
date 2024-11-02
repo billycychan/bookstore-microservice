@@ -1,23 +1,21 @@
 package com.billycychan.catalog_service.domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.billycychan.catalog_service.TestcontainersConfiguration;
+import java.math.BigDecimal;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.math.BigDecimal;
-import java.util.List;
-
 @DataJpaTest(
         properties = {
-                "spring.test.database.replace=none",
-                "spring.datasource.url=jdbc:to:postgresql:16-alpine:///db",
-        }
-)
+            "spring.test.database.replace=none",
+            "spring.datasource.url=jdbc:to:postgresql:16-alpine:///db",
+        })
 @Import(TestcontainersConfiguration.class)
 @Sql("/test-data.sql")
 class ProductRepositoryTest {
@@ -37,7 +35,7 @@ class ProductRepositoryTest {
         assertThat(product.getCode()).isEqualTo("P100");
         assertThat(product.getName()).isEqualTo("The Hunger Games");
         assertThat(product.getDescription()).isEqualTo("Winning will make you famous. Losing means certain death...");
-        assertThat(product.getPrice()).isEqualTo( new BigDecimal("34.0"));
+        assertThat(product.getPrice()).isEqualTo(new BigDecimal("34.0"));
     }
 
     @Test

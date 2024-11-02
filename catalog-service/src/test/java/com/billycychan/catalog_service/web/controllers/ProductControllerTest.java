@@ -8,10 +8,9 @@ import static org.hamcrest.Matchers.is;
 import com.billycychan.catalog_service.AbstractIT;
 import com.billycychan.catalog_service.domain.Product;
 import io.restassured.http.ContentType;
+import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.jdbc.Sql;
-
-import java.math.BigDecimal;
 
 @Sql("/test-data.sql")
 class ProductControllerTest extends AbstractIT {
