@@ -31,7 +31,8 @@
 		<spring-cloud.version>2023.0.3</spring-cloud.version>
 		<dockerImageName>billycychan/bookstore-${project.artifactId}</dockerImageName>
 		<instancio.version>4.5.1</instancio.version>
-
+		<wiremock.version>3.5.4</wiremock.version>
+		<wiremock-testcontainers.version>1.0-alpha-13</wiremock-testcontainers.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -143,6 +144,18 @@
 			<groupId>org.instancio</groupId>
 			<artifactId>instancio-junit</artifactId>
 			<version>${instancio.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.wiremock</groupId>
+			<artifactId>wiremock-standalone</artifactId>
+			<version>${wiremock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.wiremock.integrations.testcontainers</groupId>
+			<artifactId>wiremock-testcontainers-module</artifactId>
+			<version>${wiremock-testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
