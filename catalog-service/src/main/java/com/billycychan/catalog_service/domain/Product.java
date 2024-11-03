@@ -9,7 +9,4 @@ public record Product(
         String name,
         String description,
         String imageUrl,
-        @NotNull(message = "Product price is required")
-        @DecimalMin("0.1")
-        BigDecimal price
-) {}
+        @NotNull(message = "Product price is required") @DecimalMin("0.1") BigDecimal price) {}

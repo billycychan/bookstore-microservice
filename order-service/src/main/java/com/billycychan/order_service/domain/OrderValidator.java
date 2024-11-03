@@ -1,10 +1,10 @@
 package com.billycychan.order_service.domain;
-import java.util.Set;
 
 import com.billycychan.order_service.clients.catalog.Product;
 import com.billycychan.order_service.clients.catalog.ProductServiceClient;
 import com.billycychan.order_service.domain.models.CreateOrderRequest;
 import com.billycychan.order_service.domain.models.OrderItem;
+import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

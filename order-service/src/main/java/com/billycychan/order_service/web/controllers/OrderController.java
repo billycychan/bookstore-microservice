@@ -4,7 +4,6 @@ import com.billycychan.order_service.domain.OrderService;
 import com.billycychan.order_service.domain.SecurityService;
 import com.billycychan.order_service.domain.models.CreateOrderRequest;
 import com.billycychan.order_service.domain.models.CreateOrderResponse;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,15 +1,15 @@
 package com.billycychan.order_service.testdata;
 
-import com.billycychan.order_service.domain.models.CreateOrderRequest;
-import com.billycychan.order_service.domain.models.OrderItem;
-import com.billycychan.order_service.domain.models.Customer;
+import static org.instancio.Select.field;
+
 import com.billycychan.order_service.domain.models.Address;
-import org.instancio.Instancio;
+import com.billycychan.order_service.domain.models.CreateOrderRequest;
+import com.billycychan.order_service.domain.models.Customer;
+import com.billycychan.order_service.domain.models.OrderItem;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
-
-import static org.instancio.Select.field;
+import org.instancio.Instancio;
 
 public class TestDataFactory {
     static final List<String> VALID_COUNTIES = List.of("India", "Germany");

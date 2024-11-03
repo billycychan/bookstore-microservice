@@ -1,18 +1,16 @@
 package com.billycychan.order_service.web.controllers;
 
-import com.billycychan.order_service.AbstractIT;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
+import com.billycychan.order_service.AbstractIT;
 import com.billycychan.order_service.testdata.TestDataFactory;
 import io.restassured.http.ContentType;
+import java.math.BigDecimal;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.jdbc.Sql;
-
-import java.math.BigDecimal;
-
 
 @Sql("/test-orders.sql")
 class OrderControllerTests extends AbstractIT {

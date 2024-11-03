@@ -1,9 +1,5 @@
 package com.billycychan.order_service.web.controllers;
 
-import com.billycychan.order_service.domain.OrderService;
-import com.billycychan.order_service.domain.SecurityService;
-import com.billycychan.order_service.domain.models.CreateOrderRequest;
-
 import static com.billycychan.order_service.testdata.TestDataFactory.*;
 import static org.junit.jupiter.api.Named.named;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
@@ -13,6 +9,9 @@ import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.billycychan.order_service.domain.OrderService;
+import com.billycychan.order_service.domain.SecurityService;
+import com.billycychan.order_service.domain.models.CreateOrderRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;

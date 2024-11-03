@@ -3,7 +3,6 @@ package com.billycychan.order_service.domain;
 import com.billycychan.order_service.domain.models.CreateOrderRequest;
 import com.billycychan.order_service.domain.models.OrderItem;
 import com.billycychan.order_service.domain.models.OrderStatus;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
