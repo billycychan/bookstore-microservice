@@ -1,10 +1,9 @@
 package com.billycychan.order_service.domain;
 
 import com.billycychan.order_service.domain.models.OrderStatus;
+import com.billycychan.order_service.domain.models.OrderSummary;
 import java.util.List;
 import java.util.Optional;
-
-import com.billycychan.order_service.domain.models.OrderSummary;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -18,6 +17,7 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
         order.setStatus(status);
         this.save(order);
     }
+
     @Query(
             """
         select new com.billycychan.order_service.domain.models.OrderSummary(o.orderNumber, o.status)
@@ -25,4 +25,12 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
         where o.userName = :userName
         """)
     List<OrderSummary> findByUserName(String userName);
+
+    @Query(
+            """
+        select distinct o
+        from OrderEntity o left join fetch o.items
+        where o.userName = :userName and o.orderNumber = :orderNumber
+        """)
+    Optional<OrderEntity> findByUserNameAndOrderNumber(String userName, String orderNumber);
 }

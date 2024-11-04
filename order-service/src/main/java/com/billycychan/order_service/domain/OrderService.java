@@ -1,8 +1,8 @@
 package com.billycychan.order_service.domain;
 
 import com.billycychan.order_service.domain.models.*;
-
 import java.util.List;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -36,7 +36,15 @@ public class OrderService {
     }
 
     public List<OrderSummary> findOrders(String userName) {
-        return orderRepository.findByUserName(userName);
+        var orders = orderRepository.findByUserName(userName);
+        log.info("Found {} orders", orders);
+        return orders;
+    }
+
+    public Optional<OrderDTO> findUserOrder(String userName, String orderNumber) {
+        return orderRepository
+                .findByUserNameAndOrderNumber(userName, orderNumber)
+                .map(OrderMapper::convertToDTO);
     }
 
     public void processNewOrders() {
