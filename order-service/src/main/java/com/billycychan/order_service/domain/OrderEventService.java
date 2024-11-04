@@ -3,6 +3,7 @@ package com.billycychan.order_service.domain;
 import com.billycychan.order_service.domain.models.OrderCancelledEvent;
 import com.billycychan.order_service.domain.models.OrderCreatedEvent;
 import com.billycychan.order_service.domain.models.OrderDeliveredEvent;
+import com.billycychan.order_service.domain.models.OrderErrorEvent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;

@@ -4,6 +4,7 @@ import com.billycychan.order_service.ApplicationProperties;
 import com.billycychan.order_service.domain.models.OrderCancelledEvent;
 import com.billycychan.order_service.domain.models.OrderCreatedEvent;
 import com.billycychan.order_service.domain.models.OrderDeliveredEvent;
+import com.billycychan.order_service.domain.models.OrderErrorEvent;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 

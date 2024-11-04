@@ -1,8 +1,5 @@
-package com.billycychan.order_service.domain;
+package com.billycychan.order_service.domain.models;
 
-import com.billycychan.order_service.domain.models.Address;
-import com.billycychan.order_service.domain.models.Customer;
-import com.billycychan.order_service.domain.models.OrderItem;
 import java.time.LocalDateTime;
 import java.util.Set;
 
