@@ -1,9 +1,7 @@
 package com.billycychan.order_service.domain;
 
-import com.billycychan.order_service.domain.models.CreateOrderRequest;
-import com.billycychan.order_service.domain.models.CreateOrderResponse;
-import com.billycychan.order_service.domain.models.OrderCreatedEvent;
-import com.billycychan.order_service.domain.models.OrderStatus;
+import com.billycychan.order_service.domain.models.*;
+
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +33,10 @@ public class OrderService {
         OrderCreatedEvent orderCreatedEvent = OrderEventMapper.buildOrderCreatedEvent(savedOrder);
         orderEventService.save(orderCreatedEvent);
         return new CreateOrderResponse(savedOrder.getOrderNumber());
+    }
+
+    public List<OrderSummary> findOrders(String userName) {
+        return orderRepository.findByUserName(userName);
     }
 
     public void processNewOrders() {
