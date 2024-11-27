@@ -57,6 +57,13 @@ services:
       resources:
         limits:
           memory: 500m
+# MailHog
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    container_name: mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
 # Rabbit-MQ
   bookstore-rabbitmq:
     image: rabbitmq:3.12.11-management
