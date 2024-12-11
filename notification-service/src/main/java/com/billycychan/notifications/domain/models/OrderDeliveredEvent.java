@@ -1,7 +1,5 @@
 package com.billycychan.notifications.domain.models;
 
-import com.billycychan.notifications.domain.models.Address;
-
 import java.time.LocalDateTime;
 import java.util.Set;
 

@@ -1,7 +1,7 @@
 package com.billycychan.notifications.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.billycychan.notifications.ApplicationProperties;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
