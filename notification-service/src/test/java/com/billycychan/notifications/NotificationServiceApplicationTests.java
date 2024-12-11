@@ -9,8 +9,6 @@ import org.testcontainers.utility.TestcontainersConfiguration;
 @SpringBootTest
 class NotificationServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void contextLoads() {}
 }
